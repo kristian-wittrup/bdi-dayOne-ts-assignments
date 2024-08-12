@@ -1,96 +1,85 @@
 
 
-// Assignment 0 Example : return the area of a circle
-const circ = (diameter: number) => {
-  return diameter * Math.PI;  // your code 
-};
-
-// console.log(area('hello'));
-console.log(circ(7.5)); 
-
-
-
-
 // Assignment 1 : Variable Declaration
 // Declare variables to store a name and age.
-
-// Your code here : variable declaration
+const name: string = "John Doe";
+const age: number = 25;
 
 console.log(`My name is ${name} and I am ${age} years old.`);
 
-
-
 // Assignment 2 : Type Annotation and Inference
 // Infer types and explicitly annotate types for variables.
-
-// Your code here : type annotation
+let favoriteMovie = "Inception"; // Infer type
+let releaseYear: number = 2010; // Explicitly annotated type
 
 console.log(`My favorite movie is ${favoriteMovie} released in ${releaseYear}.`);
 
 
-
 // Assignment 3 : Functions and Parameters
 // Create a function that calculates the area of a rectangle.
-
-// Your code here : function
+function calculateArea(width: number, height: number): number {
+  return width * height;
+}
 
 const width = 5;
 const height = 10;
 console.log(`The area of the rectangle is ${calculateArea(width, height)}.`);
 
 
-
 //Assignment 3.5 : Object Params, add two numbers 
 //Create a function that takes an object with two number properties as arguments and prints the sum of those numbers.
-
-// Your code here : function
+let AddNumbers = (obj: { a: number, b: number }) => {
+  return obj.a + obj.b
+  //console.log(obj.a + obj.b);
+}
 
 const obj = { a: 1, b: 2 };
 console.log(AddNumbers(obj));
 
 
 
-
 // Assignment 4 : Arrays and Loops
 // Create an array of favorite colors and print each color using a loop.
+const favoriteColors: string[] = ["Red", "Blue", "Green"];
 
-// Your code here : array
-
-// Your code here : loop
-
+for (const color of favoriteColors) {
+  console.log(color);
+}
 
 
 
 // Assignment 5 : Conditional Logic
 // Create a function that checks if a number is positive.
-
-// Your code here : function
+function isPositive(num: number): boolean {
+  return num > 0;
+}
 
 const num: number = 1;
 console.log(`Is ${num} positive? ${isPositive(num) ? 'Yes' : 'No'}`);
 
-
-
-
 // Assignment 6 : Objects and Interfaces
 // Create an interface for a person and use it to define an object.
+interface Person { // interface can only be used to define an object, not a primitive type, like string, number, boolean, etc.
+  firstName: string;
+  lastName: string;
+  age: number;
+}
 
-// Your code here : interface
-
-// Your code here : object
-
-
+const person: Person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30
+};
 
 console.log(`Person: ${person.firstName} ${person.lastName}, Age: ${person.age}`);
 
 
-
 // Assignment 7.0: Union Type
 // Define a type that can be either a number or a string.
+type NumberOrString = number | string;
 
-// Your code here : type
-
-// Your code here : variable declaration and assignment
+const value1: NumberOrString = 10;
+const value2: NumberOrString = "hello";
 
 console.log(value1);
 console.log(value2);
@@ -98,12 +87,12 @@ console.log(value2);
 
 
 
-
-
 // Assignment 8 : Optional Properties
 // Define an interface for a book with an optional author property.
-
-// Your code here : interface Book with optional property
+interface Book {
+  title: string;
+  author?: string;
+}
 
 const book1: Book = {
   title: "The Great Gatsby",
