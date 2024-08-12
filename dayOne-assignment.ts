@@ -1,39 +1,29 @@
-import './style.css'
 
 
-// let character = 'mario';
-// let age = 30;
-// let isBlackBelt = false;
+// Assignment 0 Example : return the area of a circle
+const circ = (diameter: number) => {
+  return diameter * Math.PI;  // your code 
+};
 
-// // character = 20;
-// character = 'luigi';
+// console.log(area('hello'));
+console.log(circ(7.5)); 
 
-// // age = 'yoshi';
-// age = 40;
 
-// // isBlackBelt = 'yes';
-// isBlackBelt = true;
-
-// const circ = (diameter: number) => {
-//   return diameter * Math.PI;
-// };
-
-// // console.log(area('hello'));
-// console.log(circ(7.5)); 
 
 
 // Assignment 1 : Variable Declaration
 // Declare variables to store a name and age.
-const name: string = "John Doe";
-const age: number = 25;
+
+// Your code here : variable declaration
 
 console.log(`My name is ${name} and I am ${age} years old.`);
 
 
+
 // Assignment 2 : Type Annotation and Inference
 // Infer types and explicitly annotate types for variables.
-let favoriteMovie = "Inception"; // Infer type
-let releaseYear: number = 2010; // Explicitly annotated type
+
+// Your code here : type annotation
 
 console.log(`My favorite movie is ${favoriteMovie} released in ${releaseYear}.`);
 
@@ -41,22 +31,19 @@ console.log(`My favorite movie is ${favoriteMovie} released in ${releaseYear}.`)
 
 // Assignment 3 : Functions and Parameters
 // Create a function that calculates the area of a rectangle.
-function calcDistance(speed: number, time: number): number {
-  return speed * time;
-}
 
-const speed = 5;
-const time = 10;
-console.log(`The distance travelled is ${calcDistance(speed, time)}.`);
+// Your code here : function
+
+const width = 5;
+const height = 10;
+console.log(`The area of the rectangle is ${calculateArea(width, height)}.`);
 
 
 
 //Assignment 3.5 : Object Params, add two numbers 
 //Create a function that takes an object with two number properties as arguments and prints the sum of those numbers.
-let AddNumbers = (obj: { a: number, b: number }) => {
-  return obj.a + obj.b
-  //console.log(obj.a + obj.b);
-}
+
+// Your code here : function
 
 const obj = { a: 1, b: 2 };
 console.log(AddNumbers(obj));
@@ -66,38 +53,33 @@ console.log(AddNumbers(obj));
 
 // Assignment 4 : Arrays and Loops
 // Create an array of favorite colors and print each color using a loop.
-const favoriteColors: string[] = ["Red", "Blue", "Green"];
 
-for (const color of favoriteColors) {
-  console.log(color);
-}
+// Your code here : array
+
+// Your code here : loop
 
 
 
 
 // Assignment 5 : Conditional Logic
 // Create a function that checks if a number is positive.
-function isPositive(num: number): boolean {
-  return num > 0;
-}
+
+// Your code here : function
 
 const num: number = 1;
 console.log(`Is ${num} positive? ${isPositive(num) ? 'Yes' : 'No'}`);
 
 
+
+
 // Assignment 6 : Objects and Interfaces
 // Create an interface for a person and use it to define an object.
-interface Person { // interface can only be used to define an object, not a primitive type, like string, number, boolean, etc.
-  firstName: string;
-  lastName: string;
-  age: number;
-}
 
-const person: Person = {
-  firstName: "John",
-  lastName: "Doe",
-  age: 30
-};
+// Your code here : interface
+
+// Your code here : object
+
+
 
 console.log(`Person: ${person.firstName} ${person.lastName}, Age: ${person.age}`);
 
@@ -105,54 +87,23 @@ console.log(`Person: ${person.firstName} ${person.lastName}, Age: ${person.age}`
 
 // Assignment 7.0: Union Type
 // Define a type that can be either a number or a string.
-type NumberOrString = number | string;
 
-const value1: NumberOrString = 10;
-const value2: NumberOrString = "hello";
+// Your code here : type
+
+// Your code here : variable declaration and assignment
 
 console.log(value1);
 console.log(value2);
 
 
 
-// Assignment 7.1 : Union Type and Intersection Types 
-// Create a union and intersection type for a person object.
 
-// Union Type
-type UnionPerson = {
-  firstName: string;
-  lastName: string;
-  age: number;
-} | undefined;
-
-const unionPerson: UnionPerson = {
-  firstName: "John",
-  lastName: "Doe",
-  age: 30
-};
-
- console.log(`Union Person: ${unionPerson?.firstName} ${unionPerson?.lastName}, Age: ${unionPerson?.age}`);
-
-
-
-// Example 1: 
-// Define a function that can handle different argument types and print the type of the argument.
-function display(input: string): void;
-function display(input: number): void;
-function display(input: any): void {
-  console.log(input, typeof input);
-}
-
-display("Hello, world!");
-display(42);
 
 
 // Assignment 8 : Optional Properties
 // Define an interface for a book with an optional author property.
-interface Book {
-  title: string;
-  author?: string;
-}
+
+// Your code here : interface Book with optional property
 
 const book1: Book = {
   title: "The Great Gatsby",
@@ -170,33 +121,48 @@ console.log(book2);
 
 
 
+// Assignment 9 : Union Type and Intersection Types 
+// Read the code and understand the output and the types used. Grasp the concept of Union and Intersection types.
 
-// Assignment 9 : Generics
-// Create a generic function that takes an array of any type and prints each element to the console.
-function printArray(arr: any[]) {
-  for (const element of arr) {
-    console.log(element);
-  }
-}
+// Define the Person type
+type Person = {
+  firstName: string;
+  lastName: string;
+  age: number;
+};
 
-const arr1: number[] = [1, 2, 3];
-const arr2: string[] = ["a", "b", "c"];
+// Define the Address type
+type Address = {
+  street: string;
+  city: string;
+};
 
-printArray(arr1);
-printArray(arr2);
+// Define the UnionPerson type as a union of Person and undefined
+type UnionPerson = Person | undefined;
+
+// Define the IntersectionPerson type as an intersection of Person and Address
+type IntersectionPerson = Person & Address;
 
 
+// Example usage
+const person1: UnionPerson = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30
+};
 
-// Assignment 9.1 : Generic Functions
-// Create a generic function that reverses an array.
-function reverse(arr: any[])  {
-  return arr.reverse();
-}
+const person2: UnionPerson = undefined;
 
-const numbersArray: number[] = [1, 2, 3, 4, 5];
-const reversedNumbers: number[] = reverse(numbersArray);
-console.log(reversedNumbers);
+const person3: IntersectionPerson = {
+  firstName: "Jane",
+  lastName: "Smith",
+  age: 25,
+  street: "123 Main St",
+  city: "Anytown"
+};
 
-const stringsArray: string[] = ["apple", "banana", "cherry"];
-const reversedStrings: string[] = reverse(stringsArray);
-console.log(reversedStrings);
+console.log(person1); // Output: { firstName: 'John', lastName: 'Doe', age: 30 }
+console.log(person2); // Output: undefined
+console.log(person3); // Output: { firstName: 'Jane', lastName: 'Smith', age: 25, street: '123 Main St', city: 'Anytown' }
+
+// console.log(`Union Person: ${unionPerson?.firstName} ${unionPerson?.lastName}, Age: ${unionPerson?.age}`);
